@@ -1,7 +1,4 @@
-# Post-Duration
-A Wordpress plugin. Allows you to add a closing date to a post to change it to a draft, or private. This plugin is based on "Post Expirator" by Aaron Axelsen, thanks to him.
-
-=== Post Duration ===
+# Post Duration
 Contributors: Fofen Leng
 Tags: duration, expire, posts, pages, schedule, cron, closing date
 Requires at least: 4.0
@@ -11,7 +8,7 @@ Stable tag: 20.0609
 Allows you to add a closing date to a post which you can change to either draft or private.
 This plugin is based on "Post Expirator" by Aaron Axelsen, thanks to him. It can be seen as a lite version of it.
 
-== Description ==
+## Description
 
 The Post Duration plugin allows the user to set closing dates for both posts and pages.  There are a number of different ways that the posts can expire:
 
@@ -27,14 +24,14 @@ NOTE: This plugin REQUIRES that WP-CRON is setup and functional on your webhost.
 
 Plugin homepage [WordPress Post Duration](https://fofen.top).
 
-== Installation ==
+## Installation
 
 This section describes how to install the plugin and get it working.
 
 1. Unzip the plugin contents to the `/wp-content/plugins/post-duration/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
-== Screenshots ==
+## Screenshots
 
 1. Adding closing date to a post
 
@@ -42,7 +39,7 @@ This section describes how to install the plugin and get it working.
 3. Settings screen
 4. Scheduled post (cron job list)
 
-== Changelog ==
+## Changelog
 
-= 20.0609 =
+### 20.0609
 First edition.
