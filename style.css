@@ -1,0 +1,31 @@
+.post-duration-adminnotice {
+	background-color: red;
+}
+.post-duration-addcolumn {
+	font-size: 0.8em; 
+	font-weight: normal;
+}
+#post-duration-cat-list {
+	max-width: 250px;
+}
+#post-duration-cat-list ul {
+	margin: 0;
+}
+#post-duration-cat-list ul ul {
+	margin-left: 18px;
+}
+.post-duration-debug th {
+	font-weight: bold;
+	border-bottom: 1px solid black;
+}
+.post-duration-timestamp {
+	width: 150px;
+}
+.post-duration-taxonomy-name {
+	margin: 0px;
+	font-style: italic;
+	font-size: x-small;
+}
+.post-duration-quickedit input {
+	font-size: 12px;
+}
