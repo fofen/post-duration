@@ -29,11 +29,17 @@ This section describes how to install the plugin and get it working.
 ## Screenshots
 
 1. Adding closing date to a post
-![image](blob/master/screenshot-1.png)
+![image](screenshot-1.png)
 
 2. Viewing the exipiration dates on the post overview screen
+![image](screenshot-2.png)
+
 3. Settings screen
+![image](screenshot-3.png)
+
 4. Scheduled post (cron job list)
+![image](screenshot-4.png)
+
 
 ## Changelog
 
