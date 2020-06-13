@@ -1,9 +1,4 @@
 # Post Duration
-Contributors: Fofen Leng
-Tags: duration, expire, posts, pages, schedule, cron, closing date
-Requires at least: 4.0
-Tested up to: 5.4.1
-Stable tag: 20.0609
 
 Allows you to add a closing date to a post which you can change to either draft or private.
 This plugin is based on "Post Expirator" by Aaron Axelsen, thanks to him. It can be seen as a lite version of it.
@@ -34,7 +29,7 @@ This section describes how to install the plugin and get it working.
 ## Screenshots
 
 1. Adding closing date to a post
-![](screenshot-1.png)
+![](blob/master/screenshot-1.png)
 
 2. Viewing the exipiration dates on the post overview screen
 3. Settings screen
