@@ -29,7 +29,7 @@ This section describes how to install the plugin and get it working.
 ## Screenshots
 
 1. Adding closing date to a post
-![](blob/master/screenshot-1.png)
+![](https://github.com/fofen/Post-Duration/blob/master/screenshot-1.png)
 
 2. Viewing the exipiration dates on the post overview screen
 3. Settings screen
