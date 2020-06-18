@@ -4,7 +4,7 @@ Plugin Name: Post Duration
 Plugin URI: http://wordpress.org/extend/plugins/post-duration/
 Description: Allows you to change a post to be private or a draft at closing time.
 Author: Fofen Leng
-Version: 20.0612
+Version: 20.0618
 Author URI: https://fofen.top/
 Text Domain: post-duration
 */
@@ -17,7 +17,7 @@ function postDuration_init() {
 add_action('plugins_loaded', 'postDuration_init');
 
 // Default Values
-define('POSTDURATION_VERSION','20.0612');
+define('POSTDURATION_VERSION','20.0618');
 define('POSTDURATION_DATEFORMAT',__('Y-m-d','post-duration'));
 define('POSTDURATION_TIMEFORMAT',__('H:i','post-duration'));
 define('POSTDURATION_FOOTERCONTENTS',__('Post closes on CLOSINGDATE','post-duration'));
@@ -192,6 +192,7 @@ function closingdate_js_admin_header() {
 	?>
 <script type="text/javascript">
 //<![CDATA[
+
 function closingdate_ajax_add_meta(durationenable) {
 	var closing = document.getElementById(durationenable);
 
@@ -355,13 +356,13 @@ add_action('postDurationExpire','postDurationExpire');
  * Build the menu for the options page
  */
 function postDurationMenuTabs($tab) {
-        echo '<p>';
+        echo '<div class="nav-tab-wrapper">';
 	if (empty($tab)) $tab = 'general';
-        echo '<a href="'.admin_url('options-general.php?page=post-duration.php&tab=general').'"'.($tab == 'general' ? ' style="font-weight: bold; text-decoration:none;"' : '').'>'.__('General Settings','post-duration').'</a> | ';
-        echo '<a href="'.admin_url('options-general.php?page=post-duration.php&tab=defaults').'"'.($tab == 'defaults' ? ' style="font-weight: bold; text-decoration:none;"' : '').'>'.__('Defaults','post-duration').'</a> | ';
-        echo '<a href="'.admin_url('options-general.php?page=post-duration.php&tab=list').'"'.($tab == 'list' ? ' style="font-weight: bold; text-decoration:none;"' : '').'>'.__('Scheduled Posts','post-duration').'</a> | ';
-	echo '<a href="'.admin_url('options-general.php?page=post-duration.php&tab=viewdebug').'"'.($tab == 'viewdebug' ? ' style="font-weight: bold; text-decoration:none;"' : '').'>'.__('Debug Info','post-duration').'</a>';
-        echo '</p><hr/>';
+	echo '<a href="'.admin_url('options-general.php?page=post-duration.php&tab=general').'" class="nav-tab'.($tab == 'general' ? ' nav-tab-active"' : '"').'>'.__('General Settings','post-duration').'</a>';
+        echo '<a href="'.admin_url('options-general.php?page=post-duration.php&tab=defaults').'" class="nav-tab'.($tab == 'defaults' ? ' nav-tab-active"' : '"').'>'.__('Defaults','post-duration').'</a>';
+        echo '<a href="'.admin_url('options-general.php?page=post-duration.php&tab=list').'" class="nav-tab'.($tab == 'list' ? ' nav-tab-active"' : '"').'>'.__('Scheduled Posts','post-duration').'</a>';
+	echo '<a href="'.admin_url('options-general.php?page=post-duration.php&tab=viewdebug').'" class="nav-tab'.($tab == 'viewdebug' ? ' nav-tab-active"' : '"').'>'.__('Debug Info','post-duration').'</a>';
+	echo '</div>';
 }
 
 /**
@@ -542,7 +543,7 @@ function postDurationMenuDefaults() {
         <form method="post">
                 <?php wp_nonce_field('postDurationMenuDefaults','_postDurationMenuDefaults_nonce');
 		foreach ($types as $type) {
-			echo "<fieldset style='border: 1px solid black; border-radius: 6px; padding: 0px 12px; margin-bottom: 20px;'>";
+			echo "<br><fieldset style='border: 1px solid black; border-radius: 6px; padding: 0px 12px; margin-bottom: 20px;'>";
 			echo "<legend>Post Type: $type</legend>";
 			$defaults = get_option('closingdateDefaults'.ucfirst($type));
 
@@ -656,9 +657,9 @@ function postDurationMenuViewdebug() {
         <form method="post" id="postDurationMenuUpgrade">
                 <?php wp_nonce_field('postDurationMenuList','_postDurationMenuList_nonce');
 			if (POSTDURATION_DEBUG) {
-				echo '<input type="submit" class="button" name="debugging-disable" id="debugging-disable" value="'.__('Disable Debugging','post-duration').'" />';
+				echo '<br><input type="submit" class="button" name="debugging-disable" id="debugging-disable" value="'.__('Disable Debugging','post-duration').'" />';
 			} else {
-				echo '<input type="submit" class="button" name="debugging-enable" id="debugging-enable" value="'.__('Enable Debugging','post-duration').'" />';
+				echo '<br><input type="submit" class="button" name="debugging-enable" id="debugging-enable" value="'.__('Enable Debugging','post-duration').'" />';
 			}
 		?>
 		<input type="submit" class="button" name="purge-debug" id="purge-debug" value="<?php _e('Purge Debug Log','post-duration');?>" />
@@ -745,9 +746,8 @@ function _postDurationExpireType($opts) {
 	return implode("<br/>\n",$rv);
 }
 
-function postduration_trash_old_posts() { // trash old private posts more than 60 days
+function postduration_trash_old_posts() { // trash old private posts more than xx days
         global $wpdb;
-        $wpdb->query("UPDATE `" . $wpdb->prefix . "posts` SET `post_status` = 'trash'  WHERE `post_status` = 'private' AND DATEDIFF(NOW(), `post_modified`) > 60");
+        $wpdb->query("UPDATE `" . $wpdb->prefix . "posts` SET `post_status` = 'trash'  WHERE `post_status` = 'private' AND DATEDIFF(NOW(), `post_modified`) > 40");
 }
 add_action( 'delete_expired_transients', 'postduration_trash_old_posts', 10, 0 );
-
