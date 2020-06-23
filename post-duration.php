@@ -4,7 +4,7 @@ Plugin Name: Post Duration
 Plugin URI: http://wordpress.org/extend/plugins/post-duration/
 Description: Allows you to change a post to be private or a draft at closing time.
 Author: Fofen Leng
-Version: 20.0618
+Version: 20.0623
 Author URI: https://fofen.top/
 Text Domain: post-duration
 */
@@ -17,7 +17,7 @@ function postDuration_init() {
 add_action('plugins_loaded', 'postDuration_init');
 
 // Default Values
-define('POSTDURATION_VERSION','20.0618');
+define('POSTDURATION_VERSION','20.0623');
 define('POSTDURATION_DATEFORMAT',__('Y-m-d','post-duration'));
 define('POSTDURATION_TIMEFORMAT',__('H:i','post-duration'));
 define('POSTDURATION_FOOTERCONTENTS',__('Post closes on CLOSINGDATE','post-duration'));
@@ -253,17 +253,16 @@ function closingdate_update_post_meta($id) {
         $posttype = get_post_type($id);
 	$poststatus = get_post_status($id);
 	if ( $posttype == 'revision' || $poststatus == 'auto-draft' ) return;
+	$datetime = str_replace("T"," ", $_POST['closing_date']) . ":0";  // replace "T" with " ", then add ":0" in the end
+	$ts = get_gmt_from_date($datetime,'U'); // timestamp of post closing datetime
 
 	if (isset($_POST['enable-closingdate'])) {
-		$datetime = str_replace("T"," ", $_POST['closing_date']) . ":0";  // replace "T" with " ", then add ":0" in the end
-		$ts = get_gmt_from_date($datetime,'U'); // timestamp of post closing datetime
-
 		$opts = array();
 		$opts['changeTo'] = $_POST['closingdate_changeto'];
 		$opts['id'] = $id;
 		_scheduleDurationEvent($id,$ts,$opts);
 	} else {
-		_unscheduleDurationEvent($id);
+		_unscheduleDurationEvent($id,$ts);
 	}
 }
 
@@ -271,7 +270,6 @@ function _scheduleDurationEvent($id,$ts,$opts) { // Schedule/Update cron job
        	$debug = postDurationDebug(); //check for/load debug
 
 	wp_clear_scheduled_hook('postDurationExpire',array($id)); //Remove any existing hooks
-//	if (POSTDURATION_DEBUG) $debug->save(array('message' => $id.' -> EXISTING FOUND - UNSCHEDULED'));
 
 	$tz = get_option('timezone_string');
 	if ( $tz ) date_default_timezone_set( $tz );
@@ -287,13 +285,12 @@ function _scheduleDurationEvent($id,$ts,$opts) { // Schedule/Update cron job
 	update_post_meta($id, '_closing-date-status','enabled');
 }
 
-function _unscheduleDurationEvent($id) { // Delete Scheduled cron job
+function _unscheduleDurationEvent($id,$ts) { // Delete Scheduled cron job
        	$debug = postDurationDebug(); // check for/load debug
 
-	if (wp_next_scheduled('postDurationExpire',array($id)) !== false) {
-		wp_clear_scheduled_hook('postDurationExpire',array($id)); //Remove any existing hooks
-//		if (POSTDURATION_DEBUG) $debug->save(array('message' => $id.' -> UNSCHEDULED'));
-	}
+	wp_clear_scheduled_hook('postDurationExpire',array($id)); //Remove any existing hooks
+
+       	update_post_meta($id, '_closing-date', $ts);
 	update_post_meta($id, '_closing-date-status','disabled');
 }
 
