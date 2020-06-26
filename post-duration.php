@@ -102,7 +102,9 @@ function closingdate_show_value ($column_name) {
 	$id = $post->ID;
 	if ($column_name === 'closingdate') {
 		$ed = get_post_meta($id,'_closing-date',true);
-    		echo ($ed ? get_date_from_gmt(gmdate('Y-m-d H:i:s',$ed),get_option('date_format').' '.get_option('time_format')) : __("Never",'post-duration'));
+		$days = round(($ed-time())/3600/24); // 还有几天到期？
+//    		echo ($ed ? get_date_from_gmt(gmdate('Y-m-d H:i:s',$ed),get_option('date_format').' '.get_option('time_format')) : __("Never",'post-duration'));
+    		echo ($ed ? $days. __(" days",'post-duration') : __("Never",'post-duration'));
   	}
 }
 
@@ -178,7 +180,7 @@ function closingdate_meta_box($post) {
 	$rv[] = '<input type="hidden" id="closing_date" name="closing_date" type="text" value=' . $closingdate . 'T' . $closingtime . ' />';
 	echo implode("\n",$rv);
 
-	echo '<p>'.__('Change to','post-duration').': ';
+	if ($closingdatets-time() > 0) { echo '<p>' .round(($closingdatets-time())/3600/24) . __(' days left, then change to ','post-duration') ; }
 	echo _postDurationExpireType(array('type' => $post->post_type, 'name'=>'closingdate_changeto','selected'=>$changeTo,'disabled'=>$disabled));
 	echo '</p>';
 	echo '<div id="closingdate_ajax_result"></div>';
@@ -290,7 +292,7 @@ function _unscheduleDurationEvent($id,$ts) { // Delete Scheduled cron job
 
 	wp_clear_scheduled_hook('postDurationExpire',array($id)); //Remove any existing hooks
 
-       	if ($ts != 0) { update_post_meta($id, '_closing-date', $ts); } // Cron job will not set $ts, so don't update the date
+	if ($ts != 0) { update_post_meta($id, '_closing-date', $ts); } // Cron job will not set $ts, so don't update the date
 	update_post_meta($id, '_closing-date-status','disabled');
 }
 
