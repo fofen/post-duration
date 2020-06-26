@@ -2,21 +2,21 @@
 # This file is distributed under the same license as the Post Duration plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Post Duration 200608\n"
+"Project-Id-Version: Post Duration 20.0623\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/post-duration\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-06-10T01:32:44+00:00\n"
+"POT-Creation-Date: 2020-06-26T01:02:15+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: post-duration\n"
 
 #. Plugin Name of the plugin
-#: post-duration.php:118
-#: post-duration.php:485
+#: post-duration.php:120
+#: post-duration.php:393
 msgid "Post Duration"
 msgstr ""
 
@@ -69,220 +69,176 @@ msgstr ""
 msgid "Closing date"
 msgstr ""
 
-#: post-duration.php:105
+#: post-duration.php:107
+msgid " days"
+msgstr ""
+
+#: post-duration.php:107
 msgid "Never"
 msgstr ""
 
-#: post-duration.php:182
+#: post-duration.php:178
 msgid "Enable Post Duration"
 msgstr ""
 
-#: post-duration.php:185
-msgid "The published date/time will be used as the duration value"
+#: post-duration.php:183
+msgid " days left, then change to "
 msgstr ""
 
-#: post-duration.php:188
-msgid "Year"
-msgstr ""
-
-#: post-duration.php:189
-msgid "Month"
-msgstr ""
-
-#: post-duration.php:190
-msgid "Day"
-msgstr ""
-
-#: post-duration.php:222
-msgid "Hour"
-msgstr ""
-
-#: post-duration.php:223
-msgid "Minute"
-msgstr ""
-
-#: post-duration.php:243
-msgid "Change to"
-msgstr ""
-
-#: post-duration.php:452
+#: post-duration.php:360
 msgid "General Settings"
 msgstr ""
 
-#: post-duration.php:453
-#: post-duration.php:534
+#: post-duration.php:361
+#: post-duration.php:442
 msgid "Defaults"
 msgstr ""
 
-#: post-duration.php:454
+#: post-duration.php:362
 msgid "Scheduled Posts"
 msgstr ""
 
-#: post-duration.php:455
+#: post-duration.php:363
 msgid "Debug Info"
 msgstr ""
 
-#: post-duration.php:466
-#: post-duration.php:485
+#: post-duration.php:374
+#: post-duration.php:393
 msgid "Post Duration Options"
 msgstr ""
 
-#: post-duration.php:509
-#: post-duration.php:635
+#: post-duration.php:417
+#: post-duration.php:536
 msgid "Saved Options!"
 msgstr ""
 
-#: post-duration.php:530
+#: post-duration.php:438
 msgid "The post duration plugin sets a custom meta value, and then optionally allows you to select if you want the post changed to be private or a draft status when it expires."
 msgstr ""
 
-#: post-duration.php:537
+#: post-duration.php:445
 msgid "Date Format:"
 msgstr ""
 
-#: post-duration.php:541
+#: post-duration.php:449
 msgid "The default format to use when displaying the closing date within the footer.  For information on valid formatting options, see: <a href=\"http://us2.php.net/manual/en/function.date.php\" target=\"_blank\">PHP Date Function</a>."
 msgstr ""
 
-#: post-duration.php:545
+#: post-duration.php:453
 msgid "Time Format:"
 msgstr ""
 
-#: post-duration.php:549
+#: post-duration.php:457
 msgid "The default format to use when displaying the closing time within the footer.  For information on valid formatting options, see: <a href=\"http://us2.php.net/manual/en/function.date.php\" target=\"_blank\">PHP Date Function</a>."
 msgstr ""
 
-#: post-duration.php:553
+#: post-duration.php:461
 msgid "Default Duration:"
 msgstr ""
 
-#: post-duration.php:557
+#: post-duration.php:465
 msgid "Set the custom value to use for the default closing date.  For information on formatting, see <a href=\"http://php.net/manual/en/function.strtotime.php\">PHP strtotime function</a>. For example, you could enter \"+1 month\" or \"+1 week 2 days 4 hours 2 seconds\" or \"next Thursday.\""
 msgstr ""
 
-#: post-duration.php:563
+#: post-duration.php:471
 msgid "Post Footer Display"
 msgstr ""
 
-#: post-duration.php:564
+#: post-duration.php:472
 msgid "Enabling this below will display the closing date automatically at the end of any post."
 msgstr ""
 
-#: post-duration.php:567
+#: post-duration.php:475
 msgid "Show in post footer?"
 msgstr ""
 
-#: post-duration.php:569
-#: post-duration.php:688
+#: post-duration.php:477
+#: post-duration.php:584
 msgid "Enabled"
 msgstr ""
 
-#: post-duration.php:571
-#: post-duration.php:689
+#: post-duration.php:478
+#: post-duration.php:585
 msgid "Disabled"
 msgstr ""
 
-#: post-duration.php:573
-msgid "This will enable or disable displaying the post closing date in the post footer."
-msgstr ""
-
-#: post-duration.php:577
+#: post-duration.php:482
 msgid "Footer Contents:"
 msgstr ""
 
-#: post-duration.php:581
-msgid "Enter the text you would like to appear at the bottom of every post that has a duration.  The following placeholders will be replaced with the post closing date in the following format:"
-msgstr ""
-
-#: post-duration.php:590
+#: post-duration.php:493
 msgid "Footer Style:"
 msgstr ""
 
-#: post-duration.php:593
+#: post-duration.php:496
 msgid "This post will be closed on"
 msgstr ""
 
+#: post-duration.php:501
 #: post-duration.php:595
-msgid "The inline css which will be used to style the footer text."
-msgstr ""
-
-#: post-duration.php:600
-#: post-duration.php:699
 msgid "Save Changes"
 msgstr ""
 
-#: post-duration.php:643
-msgid "Default Duration Values"
-msgstr ""
-
-#: post-duration.php:645
-msgid "Use the values below to set the default actions/values to be used for each for the corresponding post types.  These values can all be overwritten when creating/editing the post/page."
-msgstr ""
-
-#: post-duration.php:670
+#: post-duration.php:566
 msgid "Active:"
 msgstr ""
 
-#: post-duration.php:672
+#: post-duration.php:568
 msgid "Active"
 msgstr ""
 
-#: post-duration.php:673
+#: post-duration.php:569
 msgid "Inactive"
 msgstr ""
 
-#: post-duration.php:674
+#: post-duration.php:570
 msgid "Select whether the post duration meta box is active for this post type."
 msgstr ""
 
-#: post-duration.php:678
+#: post-duration.php:574
 msgid "Change to:"
 msgstr ""
 
-#: post-duration.php:682
+#: post-duration.php:578
 msgid "Post will be changed to selected status on closing time."
 msgstr ""
 
-#: post-duration.php:686
+#: post-duration.php:582
 msgid "Auto-Enable?"
 msgstr ""
 
-#: post-duration.php:690
+#: post-duration.php:586
 msgid "Select whether the post duration is enabled for all new posts."
 msgstr ""
 
-#: post-duration.php:733
-msgid "Total "
-msgstr ""
-
-#: post-duration.php:746
+#: post-duration.php:642
 msgid "Debugging Disabled"
 msgstr ""
 
-#: post-duration.php:749
+#: post-duration.php:645
 msgid "Debugging Enabled"
 msgstr ""
 
-#: post-duration.php:754
+#: post-duration.php:650
 msgid "Debugging Table Emptied"
 msgstr ""
 
-#: post-duration.php:763
+#: post-duration.php:659
 msgid "Disable Debugging"
 msgstr ""
 
-#: post-duration.php:765
+#: post-duration.php:661
 msgid "Enable Debugging"
 msgstr ""
 
-#: post-duration.php:768
+#: post-duration.php:664
 msgid "Purge Debug Log"
 msgstr ""
 
-#: post-duration.php:846
+#: post-duration.php:742
 msgid "Private"
 msgstr ""
 
-#: post-duration.php:847
+#: post-duration.php:743
 msgid "Draft"
 msgstr ""

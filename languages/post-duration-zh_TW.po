@@ -1,0 +1,294 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Post Duration 200608\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/post-duration\n"
+"POT-Creation-Date: 2020-06-26T01:02:15+00:00\n"
+"PO-Revision-Date: 2020-06-26 09:14+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3.1\n"
+"X-Domain: post-duration\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Plugin Name of the plugin
+#: post-duration.php:120 post-duration.php:393
+msgid "Post Duration"
+msgstr "文章有效期"
+
+#. Plugin URI of the plugin
+msgid "http://wordpress.org/extend/plugins/post-duration/"
+msgstr ""
+
+#. Description of the plugin
+msgid "Allows you to change a post to be private or a draft at closing time."
+msgstr "給文章設置期限，過期後可變成「草稿」或「私密」狀態。"
+
+#. Author of the plugin
+msgid "Fofen Leng"
+msgstr "佛分"
+
+#. Author URI of the plugin
+msgid "https://fofen.top/"
+msgstr ""
+
+#: post-duration-debug.php:49
+msgid "Debugging table is currently empty."
+msgstr "Debug 數據表目前是空的。"
+
+#: post-duration-debug.php:53
+msgid "Timestamp"
+msgstr "時間戳"
+
+#: post-duration-debug.php:54
+msgid "Message"
+msgstr "消息"
+
+#: post-duration.php:21
+msgid "Y-m-d"
+msgstr ""
+
+#: post-duration.php:22
+msgid "H:i"
+msgstr ""
+
+#: post-duration.php:23
+msgid "Post closes on CLOSINGDATE"
+msgstr "有效期：CLOSINGDATE"
+
+#: post-duration.php:31
+msgid "Settings"
+msgstr "設置"
+
+#: post-duration.php:44 post-duration.php:90
+msgid "Closing date"
+msgstr "截止日期"
+
+#: post-duration.php:107
+msgid " days"
+msgstr " 天"
+
+#: post-duration.php:107
+msgid "Never"
+msgstr "永不過期"
+
+#: post-duration.php:178
+msgid "Enable Post Duration"
+msgstr "啟用有效期"
+
+#: post-duration.php:183
+msgid " days left, then change to "
+msgstr " 天後將轉為 "
+
+#: post-duration.php:360
+msgid "General Settings"
+msgstr "壹般設置"
+
+#: post-duration.php:361 post-duration.php:442
+msgid "Defaults"
+msgstr "默認值"
+
+#: post-duration.php:362
+msgid "Scheduled Posts"
+msgstr "即將過期"
+
+#: post-duration.php:363
+msgid "Debug Info"
+msgstr "Debug 信息"
+
+#: post-duration.php:374 post-duration.php:393
+msgid "Post Duration Options"
+msgstr "「文章有效期」選項"
+
+#: post-duration.php:417 post-duration.php:536
+msgid "Saved Options!"
+msgstr "選項已保存！"
+
+#: post-duration.php:438
+msgid ""
+"The post duration plugin sets a custom meta value, and then optionally "
+"allows you to select if you want the post changed to be private or a draft "
+"status when it expires."
+msgstr ""
+"通過「文章有效期」插件，設置壹個時間，文章到期後，可以變成「草稿」或「私"
+"密」。"
+
+#: post-duration.php:445
+msgid "Date Format:"
+msgstr "日期格式："
+
+#: post-duration.php:449
+msgid ""
+"The default format to use when displaying the closing date within the "
+"footer.  For information on valid formatting options, see: <a href=\"http://"
+"us2.php.net/manual/en/function.date.php\" target=\"_blank\">PHP Date "
+"Function</a>."
+msgstr ""
+"文末顯示的日期格式。可參閱 <a href=\"http://us2.php.net/manual/zh/function."
+"date.php\" target=\"_blank\">PHP 日期函數</a>。"
+
+#: post-duration.php:453
+msgid "Time Format:"
+msgstr "時間格式："
+
+#: post-duration.php:457
+msgid ""
+"The default format to use when displaying the closing time within the "
+"footer.  For information on valid formatting options, see: <a href=\"http://"
+"us2.php.net/manual/en/function.date.php\" target=\"_blank\">PHP Date "
+"Function</a>."
+msgstr ""
+"文末顯示的時間格式。可參閱 <a href=\"http://us2.php.net/manual/zh/function."
+"date.php\" target=\"_blank\">PHP 日期函數</a>。"
+
+#: post-duration.php:461
+msgid "Default Duration:"
+msgstr "默認期限："
+
+#: post-duration.php:465
+msgid ""
+"Set the custom value to use for the default closing date.  For information "
+"on formatting, see <a href=\"http://php.net/manual/en/function.strtotime.php"
+"\">PHP strtotime function</a>. For example, you could enter \"+1 month\" or "
+"\"+1 week 2 days 4 hours 2 seconds\" or \"next Thursday.\""
+msgstr ""
+"設置文章期限。可參考 <a href=\"http://php.net/manual/zh/function.strtotime."
+"php\">PHP strtotime 函數</a>。例如「+1 month」「+1 week 2 days 4 hours 2 "
+"seconds」或者「next Thursday」。"
+
+#: post-duration.php:471
+msgid "Post Footer Display"
+msgstr "文章底部顯示"
+
+#: post-duration.php:472
+msgid ""
+"Enabling this below will display the closing date automatically at the end "
+"of any post."
+msgstr "啟用後，期限將顯示在文章底部。"
+
+#: post-duration.php:475
+msgid "Show in post footer?"
+msgstr "顯示在文章底部嗎？"
+
+#: post-duration.php:477 post-duration.php:584
+msgid "Enabled"
+msgstr "顯示"
+
+#: post-duration.php:478 post-duration.php:585
+msgid "Disabled"
+msgstr "不顯示"
+
+#: post-duration.php:482
+msgid "Footer Contents:"
+msgstr "顯示內容："
+
+#: post-duration.php:493
+msgid "Footer Style:"
+msgstr "文本樣式："
+
+#: post-duration.php:496
+msgid "This post will be closed on"
+msgstr "有效期"
+
+#: post-duration.php:501 post-duration.php:595
+msgid "Save Changes"
+msgstr "保存修改"
+
+#: post-duration.php:566
+msgid "Active:"
+msgstr "激活："
+
+#: post-duration.php:568
+msgid "Active"
+msgstr "激活"
+
+#: post-duration.php:569
+msgid "Inactive"
+msgstr "不激活"
+
+#: post-duration.php:570
+msgid "Select whether the post duration meta box is active for this post type."
+msgstr "此類型是否需要日期限制。"
+
+#: post-duration.php:574
+msgid "Change to:"
+msgstr "過期後："
+
+#: post-duration.php:578
+msgid "Post will be changed to selected status on closing time."
+msgstr "文章過期後，將變為所選的狀態。"
+
+#: post-duration.php:582
+msgid "Auto-Enable?"
+msgstr "自動啟用？"
+
+#: post-duration.php:586
+msgid "Select whether the post duration is enabled for all new posts."
+msgstr "新建文章時，是否自動啟用。"
+
+#: post-duration.php:642
+msgid "Debugging Disabled"
+msgstr "Debug 已禁用"
+
+#: post-duration.php:645
+msgid "Debugging Enabled"
+msgstr "Debug 已啟用"
+
+#: post-duration.php:650
+msgid "Debugging Table Emptied"
+msgstr "Debug 數據已清空"
+
+#: post-duration.php:659
+msgid "Disable Debugging"
+msgstr "禁用 Debug"
+
+#: post-duration.php:661
+msgid "Enable Debugging"
+msgstr "啟用 Debug"
+
+#: post-duration.php:664
+msgid "Purge Debug Log"
+msgstr "清空 Debug 日誌"
+
+#: post-duration.php:742
+msgid "Private"
+msgstr "私密"
+
+#: post-duration.php:743
+msgid "Draft"
+msgstr "草稿"
+
+#~ msgid "Change to"
+#~ msgstr "到期後改為"
+
+#~ msgid "Day"
+#~ msgstr "日"
+
+#~ msgid "Default Duration Values"
+#~ msgstr "默認設置"
+
+#~ msgid "Hour"
+#~ msgstr "時"
+
+#~ msgid "Minute"
+#~ msgstr "分"
+
+#~ msgid "Month"
+#~ msgstr "月"
+
+#~ msgid "The published date/time will be used as the duration value"
+#~ msgstr "將把「發布時間」作為截止日期"
+
+#~ msgid ""
+#~ "This will enable or disable displaying the post closing date in the post "
+#~ "footer."
+#~ msgstr "是否在文章底部顯示有效期。"
+
+#~ msgid "Total "
+#~ msgstr "總共 "
+
+#~ msgid "Year"
+#~ msgstr "年"
