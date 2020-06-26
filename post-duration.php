@@ -290,7 +290,7 @@ function _unscheduleDurationEvent($id,$ts) { // Delete Scheduled cron job
 
 	wp_clear_scheduled_hook('postDurationExpire',array($id)); //Remove any existing hooks
 
-       	update_post_meta($id, '_closing-date', $ts);
+       	if ($ts != 0) { update_post_meta($id, '_closing-date', $ts); } // Cron job will not set $ts, so don't update the date
 	update_post_meta($id, '_closing-date-status','disabled');
 }
 
