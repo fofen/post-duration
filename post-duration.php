@@ -675,6 +675,10 @@ function postduration_add_footer($text) {
 	if ($displayFooter === false || $displayFooter == 0) // if not enabled footer
 		return $text;
 
+        $enabledStatus = get_post_meta($post->ID,'_closing-date-status',true); // not enabled for this post
+	if ($enabledStatus === 'disabled')
+		return $text;
+
         $closingdatets = get_post_meta($post->ID,'_closing-date',true);
 	if (!is_numeric($closingdatets))
 		return $text;
