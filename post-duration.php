@@ -98,14 +98,18 @@ function closingdate_add_column_page ($columns) {
 add_action ('manage_posts_custom_column', 'closingdate_show_value');
 add_action ('manage_pages_custom_column', 'closingdate_show_value');
 function closingdate_show_value ($column_name) {
-	global $post;
-	$id = $post->ID;
-	if ($column_name === 'closingdate') {
-		$ed = get_post_meta($id,'_closing-date',true);
-		$days = round(($ed-time())/3600/24); // 还有几天到期？
-//    		echo ($ed ? get_date_from_gmt(gmdate('Y-m-d H:i:s',$ed),get_option('date_format').' '.get_option('time_format')) : __("Never",'post-duration'));
-    		echo ($ed ? $days. __(" days",'post-duration') : __("Never",'post-duration'));
-  	}
+        global $post;
+        $id = $post->ID;
+        if ($column_name === 'closingdate') {
+                $enabledStatus = get_post_meta($id,'_closing-date-status',true);
+                if ($enabledStatus === 'disabled') {  // 未启用
+                        $ed = false;
+                } else {
+                        $ed = get_post_meta($id,'_closing-date',true);
+                        $days = round(($ed-time())/3600/24); // 还有几天到期？
+                }
+                echo ($ed ? $days. __(" days",'post-duration') : __("Never",'post-duration'));
+        }
 }
 
 /**
